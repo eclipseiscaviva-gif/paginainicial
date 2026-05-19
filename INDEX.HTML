@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eclipse Iscas de Pesca</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#111827;
+color:#f9fafb;
+overflow-x:hidden;
+}
+
+/* ===== HEADER ===== */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(17,24,39,.88);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(245,158,11,.18);
+}
+
+.logo img{
+width:270px;
+filter:drop-shadow(0 0 12px rgba(245,158,11,.35));
+}
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+.menu a{
+color:#f9fafb;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+transition:.3s;
+letter-spacing:.5px;
+}
+
+.menu a:hover{
+color:#f59e0b;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+position:relative;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:220px 20px 120px;
+overflow:hidden;
+background:
+linear-gradient(
+180deg,
+rgba(17,24,39,.86),
+rgba(3,7,18,.96)
+),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-size:72px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:24px;
+color:#fff;
+}
+
+.hero h1 span{
+color:#f59e0b;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.9;
+color:#d1d5db;
+margin-bottom:42px;
+}
+
+/* ===== BUTTONS ===== */
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 34px;
+border-radius:14px;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn-primary{
+background:#f59e0b;
+color:#111827;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(245,158,11,.45);
+}
+
+.btn-secondary{
+border:2px solid #f59e0b;
+color:#f59e0b;
+}
+
+.btn-secondary:hover{
+background:#f59e0b;
+color:#111827;
+}
+
+/* ===== SECTION ===== */
+
+section{
+padding:120px 30px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:46px;
+color:#f59e0b;
+margin-bottom:12px;
+}
+
+.section-title p{
+color:#d1d5db;
+}
+
+/* ===== PRODUCTS ===== */
+
+.products{
+background:#1f2937;
+}
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:28px;
+max-width:1300px;
+margin:auto;
+}
+
+.product-card{
+padding:32px;
+border-radius:24px;
+background:linear-gradient(
+180deg,
+rgba(31,41,55,.98),
+rgba(17,24,39,.98)
+);
+border:1px solid rgba(245,158,11,.15);
+transition:.3s;
+}
+
+.product-card:hover{
+transform:translateY(-7px);
+border-color:#f59e0b;
+box-shadow:0 0 24px rgba(245,158,11,.12);
+}
+
+.product-card h3{
+font-size:24px;
+margin-bottom:22px;
+color:#f59e0b;
+}
+
+.product-card ul{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.product-card li{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:15px;
+color:#e5e7eb;
+}
+
+.product-card li i{
+color:#f59e0b;
+}
+
+/* ===== ABOUT ===== */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+background:#111827;
+}
+
+.about img{
+width:100%;
+border-radius:24px;
+box-shadow:0 0 30px rgba(245,158,11,.12);
+}
+
+.about-content h2{
+font-size:46px;
+margin-bottom:24px;
+color:#f59e0b;
+}
+
+.about-content p{
+line-height:1.9;
+color:#d1d5db;
+margin-bottom:20px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+background:#1f2937;
+text-align:center;
+}
+
+.contact h2{
+font-size:46px;
+margin-bottom:20px;
+color:#f59e0b;
+}
+
+.contact p{
+font-size:18px;
+margin-bottom:18px;
+color:#e5e7eb;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+padding:28px;
+text-align:center;
+background:#030712;
+color:#9ca3af;
+}
+
+/* ===== WHATSAPP ===== */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:68px;
+height:68px;
+border-radius:50%;
+background:#f59e0b;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:#111827;
+text-decoration:none;
+z-index:999;
+box-shadow:0 0 25px rgba(245,158,11,.45);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:18px;
+padding:16px;
+}
+
+.logo img{
+width:220px;
+}
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+gap:18px;
+}
+
+.hero{
+padding-top:260px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.section-title h2,
+.about-content h2,
+.contact h2{
+font-size:32px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png" alt="Eclipse Iscas de Pesca">
+</div>
+
+<nav class="menu">
+<a href="#">INÍCIO</a>
+<a href="#produtos">PRODUTOS</a>
+<a href="#sobre">SOBRE</a>
+<a href="#contato">CONTATO</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Eclipse
+<span>Iscas de Pesca</span>
+</h1>
+
+<p>
+Qualidade, variedade e as melhores iscas
+para sua pescaria ficar completa.
+</p>
+
+<div class="buttons">
+
+<a href="https://wa.me/5544991549518"
+class="btn btn-primary">
+
+<i class="fa-brands fa-whatsapp"></i>
+WhatsApp
+
+</a>
+
+<a href="#produtos"
+class="btn btn-secondary">
+
+Ver Produtos
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="products" id="produtos">
+
+<div class="section-title">
+
+<h2>Nossos Produtos</h2>
+
+<p>
+Tudo para sua pescaria em um só lugar
+</p>
+
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+
+<h3>Iscas Vivas</h3>
+
+<ul>
+<li><i class="fa-solid fa-fish"></i> Curimbinha</li>
+<li><i class="fa-solid fa-fish"></i> Cascudinho</li>
+<li><i class="fa-solid fa-fish"></i> Lambari</li>
+<li><i class="fa-solid fa-fish"></i> Tuvira</li>
+<li><i class="fa-solid fa-fish"></i> Pirambóia</li>
+<li><i class="fa-solid fa-fish"></i> Caranguejo</li>
+<li><i class="fa-solid fa-fish"></i> Minhoca</li>
+</ul>
+
+</div>
+
+<div class="product-card">
+
+<h3>Massas Especiais</h3>
+
+<ul>
+<li><i class="fa-solid fa-bowl-food"></i> Pacu e Tilápia</li>
+<li><i class="fa-solid fa-bowl-food"></i> Banana e Mel</li>
+<li><i class="fa-solid fa-bowl-food"></i> Banana e Amendoim</li>
+<li><i class="fa-solid fa-bowl-food"></i> Massa P-45</li>
+</ul>
+
+</div>
+
+<div class="product-card">
+
+<h3>Cevas e Grãos</h3>
+
+<ul>
+<li><i class="fa-solid fa-seedling"></i> Milho Verde</li>
+<li><i class="fa-solid fa-seedling"></i> Milho em Grão</li>
+<li><i class="fa-solid fa-seedling"></i> Farelo de Soja</li>
+<li><i class="fa-solid fa-seedling"></i> Farelo de Arroz</li>
+</ul>
+
+</div>
+
+<div class="product-card">
+
+<h3>Iscas Desidratadas</h3>
+
+<ul>
+<li><i class="fa-solid fa-shrimp"></i> Tripa de Frango</li>
+<li><i class="fa-solid fa-shrimp"></i> Sambiquira</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about" id="sobre">
+
+<div>
+<img src="produtos.jpg" alt="Produtos Eclipse">
+</div>
+
+<div class="about-content">
+
+<h2>Sobre Nós</h2>
+
+<p>
+A Eclipse Iscas de Pesca oferece produtos
+de qualidade para pescadores da região.
+</p>
+
+<p>
+Trabalhamos com iscas vivas, massas especiais,
+grãos, ceva e essências.
+</p>
+
+<p>
+Atendimento rápido, confiança e variedade
+para sua pescaria.
+</p>
+
+</div>
+
+</section>
+
+<section class="contact" id="contato">
+
+<h2>Entre em Contato</h2>
+
+<p>
+📞 (44) 99154-9518
+</p>
+
+<p>
+📍 RUA JOÃO DE MAGALHÃES MOÇO FILHO
+(ANTIGA 9), Nº 123
+</p>
+
+<div class="buttons">
+
+<a href="https://wa.me/5544991549518"
+class="btn btn-primary">
+
+<i class="fa-brands fa-whatsapp"></i>
+WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Eclipse Iscas de Pesca
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/5544991549518">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</body>
+
+</html>
